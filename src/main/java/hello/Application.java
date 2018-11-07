@@ -57,6 +57,8 @@ public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) throws InterruptedException {
 
+		LOGGER.info("Starting app...");
+
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
 		StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
