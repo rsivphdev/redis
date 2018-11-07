@@ -16,10 +16,26 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
+
+
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
-	/*
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(Application.class);
+	}
+}
+
+/*
+@SpringBootApplication
+public class Application extends SpringBootServletInitializer {
+
+
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
@@ -53,7 +69,7 @@ public class Application extends SpringBootServletInitializer {
 	StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
 		return new StringRedisTemplate(connectionFactory);
 	}
-*/
+
 	public static void main(String[] args) throws InterruptedException {
 
 
@@ -67,7 +83,7 @@ public class Application extends SpringBootServletInitializer {
 		template.convertAndSend("chat", "Hello from Redis!");
 
 		latch.await();
-*/
+
 		//System.exit(0);
 	}
 
@@ -76,3 +92,4 @@ public class Application extends SpringBootServletInitializer {
 		return application.sources(Application.class);
 	}
 }
+*/
