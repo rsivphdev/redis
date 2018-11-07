@@ -57,7 +57,8 @@ public class Application extends SpringBootServletInitializer {
 	public static void main(String[] args) throws InterruptedException {
 
 
-		ApplicationContext ctx = SpringApplication.run(Application.class, args);
+		SpringApplication.run(Application.class, args);
+		//ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
 		/*StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
 		CountDownLatch latch = ctx.getBean(CountDownLatch.class);
