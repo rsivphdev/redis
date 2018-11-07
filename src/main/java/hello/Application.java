@@ -19,6 +19,8 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
+	/*
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
 	@Bean
@@ -51,20 +53,20 @@ public class Application extends SpringBootServletInitializer {
 	StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
 		return new StringRedisTemplate(connectionFactory);
 	}
-
+*/
 	public static void main(String[] args) throws InterruptedException {
 
 
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
-		StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
+		/*StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
 		CountDownLatch latch = ctx.getBean(CountDownLatch.class);
 
 		LOGGER.info("Sending message...");
 		template.convertAndSend("chat", "Hello from Redis!");
 
 		latch.await();
-
+*/
 		//System.exit(0);
 	}
 
