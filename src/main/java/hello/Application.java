@@ -55,21 +55,9 @@ public class Application extends SpringBootServletInitializer {
 	}
 
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 
-		LOGGER.info("Starting app...");
-
-		ApplicationContext ctx = SpringApplication.run(Application.class, args);
-
-		StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
-		CountDownLatch latch = ctx.getBean(CountDownLatch.class);
-
-		LOGGER.info("Sending message...");
-		template.convertAndSend("chat", "Hello from Redis!");
-
-		latch.await();
-
-
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Override
